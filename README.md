@@ -24,14 +24,14 @@ The app uses AsyncStorage for a local demo account, saved favorites, progress, a
 
 ## Project map
 
-- `App.tsx` — navigation shell, authentication and app state
-- `src/screens/AuthScreens.tsx` — login and registration validation
-- `src/screens/HomeScreen.tsx` — home feed and API integration
-- `src/screens/DetailScreen.tsx` — learning path details and progress action
-- `src/screens/LibraryScreen.tsx` — favorites and profile
-- `src/screens/SettingsScreen.tsx` — settings menu, preferences, reminders
-- `src/storage.ts` — AsyncStorage persistence
-- `src/notifications.ts` — notification permissions and scheduling
+- `App.js` — navigation shell, authentication and app state
+- `src/screens/AuthScreens.js` — login and registration validation
+- `src/screens/HomeScreen.js` — home feed and API integration
+- `src/screens/DetailScreen.js` — learning path details and progress action
+- `src/screens/LibraryScreen.js` — favorites and profile
+- `src/screens/SettingsScreen.js` — settings menu, preferences, reminders
+- `src/storage.js` — AsyncStorage persistence
+- `src/notifications.js` — notification permissions and scheduling
 - `docs/SUBMISSION.md` — 28-task evidence and submission checklist
 - `design/` — screen design brief and SVG wireframes suitable for importing into Figma
 

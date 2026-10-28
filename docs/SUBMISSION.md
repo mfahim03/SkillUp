@@ -10,28 +10,28 @@ Screenshots belong in `evidence/`. Capture screenshots from the running app (and
 | 2 | 9 | Nine user stories | [README.md](../README.md#user-stories) |
 | 3 | 5 | Figma: login, registration, home, detail, favorites/profile | `evidence/figma-evidence1.png` (capture in Figma) |
 | 4 | 4 | Figma: API, menu, settings, notifications | `evidence/figma-evidence2.png` (capture in Figma) |
-| 5 | 4 | Signup implementation link | [`src/screens/AuthScreens.tsx`](../src/screens/AuthScreens.tsx) — `signup` and validation |
+| 5 | 4 | Signup implementation link | [`src/screens/AuthScreens.js`](../src/screens/AuthScreens.js) — `signup` and validation |
 | 6 | 6 | Signup screen screenshot | `evidence/signup_screen_evidence.png` |
 | 7 | 2 | Signup error screenshot | `evidence/signup_error.png` — show validation or duplicate-account error |
-| 8 | 4 | Login implementation link | [`src/screens/AuthScreens.tsx`](../src/screens/AuthScreens.tsx) — `login` and credential check |
+| 8 | 4 | Login implementation link | [`src/screens/AuthScreens.js`](../src/screens/AuthScreens.js) — `login` and credential check |
 | 9 | 5 | Login screen screenshot | `evidence/login_screen_evidence.png` |
 | 10 | 2 | Login error screenshot | `evidence/login_error.png` — show invalid credentials alert |
-| 11 | 4 | Home implementation link | [`src/screens/HomeScreen.tsx`](../src/screens/HomeScreen.tsx) |
+| 11 | 4 | Home implementation link | [`src/screens/HomeScreen.js`](../src/screens/HomeScreen.js) |
 | 12 | 4 | Home screenshot with header logo | `evidence/home-screen-evidence.png` |
-| 13 | 4 | Detail implementation link | [`src/screens/DetailScreen.tsx`](../src/screens/DetailScreen.tsx) |
+| 13 | 4 | Detail implementation link | [`src/screens/DetailScreen.js`](../src/screens/DetailScreen.js) |
 | 14 | 2 | Home navigation icon screenshot | `evidence/evidence-detail-navigation.png` |
 | 15 | 2 | Detail item screenshot | `evidence/evidence-detail-screen.png` |
-| 16 | 4 | Local storage implementation link | [`src/storage.ts`](../src/storage.ts) |
+| 16 | 4 | Local storage implementation link | [`src/storage.js`](../src/storage.js) |
 | 17 | 2 | Local storage data screenshot | `evidence/evidence-persistence.png` (AsyncStorage inspector or exported snapshot) |
 | 18 | 2 | Front-end and persisted data screenshot | `evidence/evidence-integrateScreen-persistence.png` |
-| 19 | 4 | API implementation link | [`src/data.ts`](../src/data.ts) — `fetchLearningInspiration` |
+| 19 | 4 | API implementation link | [`src/data.js`](../src/data.js) — `fetchLearningInspiration` |
 | 20 | 2 | API data in app screenshot | `evidence/evidence-api-ux.png` |
-| 21 | 4 | Settings menu implementation link | [`App.tsx`](../App.tsx) — tab menu |
+| 21 | 4 | Settings menu implementation link | [`App.js`](../App.js) — tab menu |
 | 22 | 2 | Settings menu icon screenshot | `evidence/evidence-menu-icon.png` |
 | 23 | 5 | Settings menu items screenshot | `evidence/evidence-menu-items.png` |
-| 24 | 4 | Settings implementation link | [`src/screens/SettingsScreen.tsx`](../src/screens/SettingsScreen.tsx) |
+| 24 | 4 | Settings implementation link | [`src/screens/SettingsScreen.js`](../src/screens/SettingsScreen.js) |
 | 25 | 2 | Settings screen screenshot | `evidence/evidence-settings-screen.png` |
-| 26 | 4 | Notification implementation link | [`src/notifications.ts`](../src/notifications.ts), [`src/screens/SettingsScreen.tsx`](../src/screens/SettingsScreen.tsx) |
+| 26 | 4 | Notification implementation link | [`src/notifications.js`](../src/notifications.js), [`src/screens/SettingsScreen.js`](../src/screens/SettingsScreen.js) |
 | 27 | 2 | Notification configuration screenshot | `evidence/evidence-notification-configure.png` |
 | 28 | 4 | Triggered test notification screenshot | `evidence/evidence-notification-alert.png` (physical device recommended) |
 

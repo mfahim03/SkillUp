@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Header } from '../components';
-import { Course } from '../types';
 import { courses, fetchLearningInspiration } from '../data';
 import { C } from '../theme';
-
-export function CourseCard({ course, onPress, saved, onSave }: { course: Course; onPress: () => void; saved?: boolean; onSave?: () => void }) {
-  return <Pressable onPress={onPress} style={s.card}><View style={[s.art, { backgroundColor: course.color }]}><Text style={{ fontSize: 31 }}>{course.emoji}</Text><Text style={s.level}>{course.level.toUpperCase()}</Text></View><View style={s.cardBody}><View style={s.cardTop}><Text style={s.category}>{course.category}</Text>{onSave && <Pressable onPress={(e) => { e.stopPropagation(); onSave(); }} hitSlop={12}><Text style={s.heart}>{saved ? '♥' : '♡'}</Text></Pressable>}</View><Text style={s.cardTitle}>{course.title}</Text><Text style={s.meta}>{course.lessons} lessons  ·  {course.duration}</Text></View></Pressable>;
+export function CourseCard({ course, onPress, saved, onSave }) {
+    return <Pressable onPress={onPress} style={s.card}><View style={[s.art, { backgroundColor: course.color }]}><Text style={{ fontSize: 31 }}>{course.emoji}</Text><Text style={s.level}>{course.level.toUpperCase()}</Text></View><View style={s.cardBody}><View style={s.cardTop}><Text style={s.category}>{course.category}</Text>{onSave && <Pressable onPress={(e) => { e.stopPropagation(); onSave(); }} hitSlop={12}><Text style={s.heart}>{saved ? '♥' : '♡'}</Text></Pressable>}</View><Text style={s.cardTitle}>{course.title}</Text><Text style={s.meta}>{course.lessons} lessons  ·  {course.duration}</Text></View></Pressable>;
 }
-export function HomeScreen({ name, onOpen, favorites, toggleFavorite }: { name: string; onOpen: (course: Course) => void; favorites: string[]; toggleFavorite: (id: string) => void }) {
-  const [apiCourses, setApiCourses] = useState<Course[]>([]); const [loading, setLoading] = useState(true); const [offline, setOffline] = useState(false);
-  useEffect(() => { fetchLearningInspiration().then(setApiCourses).catch(() => setOffline(true)).finally(() => setLoading(false)); }, []);
-  return <ScrollView style={s.root} contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
-    <View style={s.topbar}><View style={s.brand}><View style={s.logo}><Text style={{ color: '#fff', fontWeight: '900', fontSize: 19 }}>✦</Text></View><Text style={s.brandName}>SkillUp</Text></View><View style={s.avatar}><Text style={s.avatarText}>{name.slice(0,1).toUpperCase()}</Text></View></View>
+export function HomeScreen({ name, onOpen, favorites, toggleFavorite }) {
+    const [apiCourses, setApiCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [offline, setOffline] = useState(false);
+    useEffect(() => { fetchLearningInspiration().then(setApiCourses).catch(() => setOffline(true)).finally(() => setLoading(false)); }, []);
+    return <ScrollView style={s.root} contentContainerStyle={s.content} showsVerticalScrollIndicator={false}>
+    <View style={s.topbar}><View style={s.brand}><View style={s.logo}><Text style={{ color: '#fff', fontWeight: '900', fontSize: 19 }}>✦</Text></View><Text style={s.brandName}>SkillUp</Text></View><View style={s.avatar}><Text style={s.avatarText}>{name.slice(0, 1).toUpperCase()}</Text></View></View>
     <Text style={s.eyebrow}>TUESDAY, 28 OCTOBER</Text><Text style={s.greeting}>Good evening, {name.split(' ')[0]} ✨</Text><Text style={s.lead}>Ready for a little progress today?</Text>
     <View style={s.streak}><View><Text style={s.streakTag}>YOUR WEEKLY STREAK</Text><Text style={s.streakValue}>3 days <Text style={{ fontSize: 17 }}>🔥</Text></Text><Text style={s.streakCaption}>You’re building a lovely habit.</Text></View><View style={s.streakCircle}><Text style={{ fontSize: 25 }}>📚</Text></View></View>
-    <Header title="Pick up where you left off" subtitle="Small steps add up." />
-    <CourseCard course={courses[0]} onPress={() => onOpen(courses[0])} saved={favorites.includes(courses[0].id)} onSave={() => toggleFavorite(courses[0].id)} />
-    <Header title="Explore learning paths" subtitle="Find your next thing." />
-    {courses.slice(1).map(c => <CourseCard key={c.id} course={c} onPress={() => onOpen(c)} saved={favorites.includes(c.id)} onSave={() => toggleFavorite(c.id)} />)}
-    <View style={s.apiHead}><View><Text style={s.sectionTitle}>A little inspiration</Text><Text style={s.sectionSub}>Fresh ideas, fetched just for you</Text></View>{loading && <ActivityIndicator color={C.violet} />}</View>
-    {offline ? <Text style={s.apiNote}>You’re offline. Your learning paths are still here.</Text> : apiCourses.map(c => <CourseCard key={c.id} course={c} onPress={() => onOpen(c)} saved={favorites.includes(c.id)} onSave={() => toggleFavorite(c.id)} />)}
+    <Header title="Pick up where you left off" subtitle="Small steps add up."/>
+    <CourseCard course={courses[0]} onPress={() => onOpen(courses[0])} saved={favorites.includes(courses[0].id)} onSave={() => toggleFavorite(courses[0].id)}/>
+    <Header title="Explore learning paths" subtitle="Find your next thing."/>
+    {courses.slice(1).map(c => <CourseCard key={c.id} course={c} onPress={() => onOpen(c)} saved={favorites.includes(c.id)} onSave={() => toggleFavorite(c.id)}/>)}
+    <View style={s.apiHead}><View><Text style={s.sectionTitle}>A little inspiration</Text><Text style={s.sectionSub}>Fresh ideas, fetched just for you</Text></View>{loading && <ActivityIndicator color={C.violet}/>}</View>
+    {offline ? <Text style={s.apiNote}>You’re offline. Your learning paths are still here.</Text> : apiCourses.map(c => <CourseCard key={c.id} course={c} onPress={() => onOpen(c)} saved={favorites.includes(c.id)} onSave={() => toggleFavorite(c.id)}/>)}
     <Text style={s.apiNote}>Learning inspiration via DummyJSON · API integration</Text>
   </ScrollView>;
 }
