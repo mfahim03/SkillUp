@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "SkillUp",
+    "slug": "skillup-learning-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": { "backgroundColor": "#F6F7FB" },
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.uvw.codelabs.skillup" },
+    "android": { "package": "com.uvw.codelabs.skillup", "adaptiveIcon": { "backgroundColor": "#635BFF" } },
+    "plugins": [["expo-notifications", { "color": "#635BFF" }]]
+  }
+}
